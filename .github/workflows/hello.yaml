@@ -1,0 +1,16 @@
+name: Run on Push
+
+on:
+  push:
+    branches: [ dev ]         # Triggers when code is pushed to 'dev'
+  pull_request:
+    branches: [ main ]        # Triggers when a PR targets 'main'
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a script
+        run: echo "This runs on every push!"
